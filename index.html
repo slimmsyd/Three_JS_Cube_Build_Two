@@ -18,29 +18,22 @@
 
     <script>
 
-document.addEventListener('DOMContentLoaded', () => {
-  const getQueryParams = () => {
-    const params = {};
-    const queryString = window.location.search.slice(1);
-    queryString.split('&').forEach(param => {
-      const [key, value] = param.split('=');
-      params[key] = decodeURIComponent(value);
-    });
-    return params;
-  };
 
-  // Extract the 'address' parameter from the URL
-  const params = getQueryParams();
-  const walletAddress = params.address; // Assuming 'address' is the parameter name
+function getParameterByName(name) {
+    const urlParams = new URLSearchParams(window.location.search);
+    return urlParams.get(name); // Returns the parameter value
+}
 
-  console.log("Wallet address from URL:", walletAddress);
+window.onload = function() {
+    // Example: Query ?id=1234
+    const id = getParameterByName('address');
+    console.log('ID:', id); // Outputs the value to the console
+    document.getElementById('output').textContent = 'ID: ' + id;
 
-  if (walletAddress) {
-    // Use this wallet address in your logic, like fetching data based on this address
-  } else {
-    console.error('No wallet address found in URL parameters.');
-  }
-});
+
+    console.log("Loggin the ID", id)
+}
+
 
       document.addEventListener("DOMContentLoaded", () => {
         
