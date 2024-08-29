@@ -692,7 +692,10 @@ function resetSelection() {
 //OBJECTS
 function loadModel(cubeData, div) {
   //nodes
-  let cube = cubeData[1];
+  let cube = cubeData;
+
+  console.log("LOgging cube data", cubeData)
+  console.log("LOgging cube data", cube)
 
   // group
   let group = new THREE.Group();
@@ -727,10 +730,14 @@ function loadModel(cubeData, div) {
   group.add(collider);
 
   //load cube
+
+  console.log("Loging the cube before laod", cube)
   loadCube(group, cube, div, slot);
 }
 
 function loadCube(group, cube, div) {
+
+  console.log("Logging the cube", cube)
   loaderGLTF.load("../assets/models/cubes/" + cube.file, function (gltf) {
     let model = gltf.scene;
 

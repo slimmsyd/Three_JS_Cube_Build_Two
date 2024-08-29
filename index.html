@@ -16,9 +16,6 @@
 
     <link rel="stylesheet" href="./css/main.css" />
     <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
-
- 
-
   </head>
 
   <body>
@@ -148,90 +145,81 @@
     <!-- <script type="module" src="./js/main.js"></script> -->
   </body>
 
-
   <script type="module">
     // Import necessary functions from viem
-    import {
-      createWalletClient,
-      custom,
-    } from "https://esm.sh/viem";
+    import { createWalletClient, custom } from "https://esm.sh/viem";
     import { baseSepolia } from "https://esm.sh/viem/chains";
-    import { CubeViewer } from './js/CubeViewer.js';
-    import { updateCubeBank } from './js/Database.js';
+    import { CubeViewer } from "./js/CubeViewer.js";
+    import { updateCubeBank } from "./js/Database.js";
 
     // Function to auto-connect the wallet and log the address
     async function autoConnectWallet() {
       try {
+        if (typeof window.ethereum === "undefined") {
+          throw new Error(
+            "Ethereum wallet is not available. Please install MetaMask or another wallet extension."
+          );
+        }
 
-        if (typeof window.ethereum === 'undefined') {
-              throw new Error('Ethereum wallet is not available. Please install MetaMask or another wallet extension.');
-            }
+        // Create a client that connects the user's account to Ethereum Sepolia
+        const walletClient = createWalletClient({
+          chain: baseSepolia,
+          transport: custom(window.ethereum),
+        });
 
-                // Create a client that connects the user's account to Ethereum Sepolia
-    const walletClient = createWalletClient({
-      chain: baseSepolia,
-      transport: custom(window.ethereum),
-    });
+        const accounts = await window.ethereum.request({
+          method: "eth_requestAccounts",
+        });
 
-
-
-    const accounts = await window.ethereum.request({ method: 'eth_requestAccounts' });
-
-
-
-    if (!accounts || accounts.length === 0) {
-              throw new Error('No accounts found. Please make sure your wallet is connected.');
-            }
-
+        if (!accounts || accounts.length === 0) {
+          throw new Error(
+            "No accounts found. Please make sure your wallet is connected."
+          );
+        }
 
         // Get the first address in the accounts array
         const [address] = accounts;
 
-      // Dispatch a custom event with the wallet address
-      const event = new CustomEvent('walletAddressReady', { detail: { address } });
-      window.dispatchEvent(event);
+        // Dispatch a custom event with the wallet address
+        const event = new CustomEvent("walletAddressReady", {
+          detail: { address },
+        });
+        window.dispatchEvent(event);
         // Log the address to the console
-        console.log('Connected address Local host:', address);
+        console.log("Connected address Local host:", address);
         await fetchNftData(address);
-
       } catch (error) {
-        console.error('Error connecting to wallet:', error);
+        console.error("Error connecting to wallet:", error);
       }
     }
 
     // Automatically connect the wallet when the script loads
-  // Function to fetch NFT data using the connected wallet address
-  async function fetchNftData(walletAddress) {
-          const apiUrl = `https://creature-cubes-express-api.vercel.app/nft-gallery/${walletAddress}`;
+    // Function to fetch NFT data using the connected wallet address
+    async function fetchNftData(walletAddress) {
+      const apiUrl = `https://creature-cubes-express-api.vercel.app/nft-gallery/${walletAddress}`;
 
+      // const hardcodeapi = "https://creature-cubes-express-api.vercel.app/nft-gallery/0x24e259e42dA2f27071e37D318489106f0DF7310E"
 
-
-          // const hardcodeAPi = `https://creature-cubes-express-api.vercel.app/nft-gallery/0x8337b301f07e2Fe4C525Db0828f50b69182CECD4`
-
-
-          console.log("LOggin the API URL", apiUrl)
-          try {
-            const response = await fetch(apiUrl);
-            if (!response.ok) {
-              throw new Error('Network response was not ok ' + response.statusText);
-            }
-            const data = await response.json();
-            console.log('NFT Data:', data);
-            // Initialize CubeViewer or any other logic
-            if (data) {
-              updateCubeBank(data);
-              const cubeViewer = new CubeViewer();
-              cubeViewer.init();
-            } else {
-              console.error('No cubeBank data found for this wallet address.');
-            }
-          } catch (error) {
-            console.error('Error fetching NFT data:', error);
-          }
+      try {
+        const response = await fetch(apiUrl);
+        if (!response.ok) {
+          throw new Error("Network response was not ok " + response.statusText);
         }
-        // Automatically connect the wallet and fetch NFT data when the script loads
-        autoConnectWallet();
-</script>
-
-
+        const data = await response.json();
+        console.log("NFT Data:", data);
+        // Initialize CubeViewer or any other logic
+        if (data) {
+          updateCubeBank(data);
+          const cubeViewer = new CubeViewer();
+          cubeViewer.init();
+        } else {
+          console.error("No cubeBank data found for this wallet address.");
+        }
+      } catch (error) {
+        console.error("Error fetching NFT data:", error);
+      }
+    }
+    // Automatically connect the wallet and fetch NFT data when the script loads
+    autoConnectWallet();
+  </script>
 </html>
