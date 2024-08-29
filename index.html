@@ -20,7 +20,7 @@
         // Function to fetch the wallet address from the external server
         const fetchWalletAddressFromExternalServer = async () => {
           try {
-            const response = await fetch('hhttps://creature-cubes-express-api.vercel.app/nft-mints'); // Replace with the external server's URL
+            const response = await fetch('https://creature-cubes-express-api.vercel.app/nft-mints'); // Replace with the external server's URL
             const data = await response.json();
             if (data.walletAddress) {
               console.log('Wallet address received from external server:', data.walletAddress);
