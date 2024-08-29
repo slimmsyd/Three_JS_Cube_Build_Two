@@ -208,7 +208,6 @@ scene.add(cubeGroup);
 
 // CUBES
 let dataCubes = Object.entries(cubeBank);
-console.log("LOgging data cubes" ,dataCubes)
 for (let i = 0; i < dataCubes.length; i++) {
   let div = document.createElement("div");
   div.classList.add("cube-icon");
@@ -220,7 +219,6 @@ for (let i = 0; i < dataCubes.length; i++) {
   div.appendChild(img);
 
 
-  console.log("Logging image", img)
 
   document.getElementById("inventory-holder_content").appendChild(div);
   div.addEventListener("click", (event) => {
