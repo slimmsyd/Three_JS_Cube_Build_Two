@@ -10,20 +10,20 @@ cubeViewer.init();
 
 
   
-  // Function to fetch the wallet address from an external server (if needed)
-  const fetchWalletAddressFromExternalServer = async () => {
-    try {
-      const response = await fetch("https://creature-cubes-express-api.vercel.app/nft-mints");
-      const data = await response.json();
+//   // Function to fetch the wallet address from an external server (if needed)
+//   const fetchWalletAddressFromExternalServer = async () => {
+//     try {
+//       const response = await fetch("https://creature-cubes-express-api.vercel.app/nft-mints");
+//       const data = await response.json();
   
-      console.log("Logging the data from external server:", data);
-      // Assuming the server returns a wallet address, return it
-      // return data.walletAddress || null;
-    } catch (error) {
-      console.error("Error fetching wallet address from external server:", error);
-      return null;
-    }
-  };
+//       console.log("Logging the data from external server:", data);
+//       // Assuming the server returns a wallet address, return it
+//       // return data.walletAddress || null;
+//     } catch (error) {
+//       console.error("Error fetching wallet address from external server:", error);
+//       return null;
+//     }
+//   };
   
   // Example call for fetching the wallet address from an external server
   // fetchWalletAddressFromExternalServer();

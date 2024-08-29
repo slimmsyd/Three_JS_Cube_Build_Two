@@ -17,23 +17,8 @@
     <link rel="stylesheet" href="./css/main.css" />
     <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
 
+ 
 
-    <script>
-window.addEventListener('message', (event) => {
-  // Ensure the message comes from the expected origin
-  if (event.origin !== 'https://three-js-cube-build-two.vercel.app') return;
-
-  const walletAddress = event.data.walletAddress;
-
-  if (walletAddress) {
-    console.log('Wallet address received from iframe:', walletAddress);
-    // Now you can use the wallet address in the parent window
-  } else {
-    console.error('No wallet address received from iframe.');
-  }
-});
-
-    </script>
   </head>
 
   <body>
@@ -162,4 +147,39 @@ window.addEventListener('message', (event) => {
     </script>
     <script type="module" src="./js/main.js"></script>
   </body>
+
+
+  <script type="module">
+    // Import necessary functions from viem
+    import {
+      createWalletClient,
+      custom,
+    } from "https://esm.sh/viem";
+    import { sepolia } from "https://esm.sh/viem/chains";
+
+    // Create a client that connects the user's account to Ethereum Sepolia
+    const walletClient = createWalletClient({
+      chain: sepolia,
+      transport: custom(window.ethereum),
+    });
+
+    // Function to auto-connect the wallet and log the address
+    async function autoConnectWallet() {
+      try {
+        const accounts = await walletClient.requestAddresses();
+
+        // Get the first address in the accounts array
+        const [address] = accounts;
+
+        // Log the address to the console
+        console.log('Connected address:', address);
+      } catch (error) {
+        console.error('Error connecting to wallet:', error);
+      }
+    }
+
+    // Automatically connect the wallet when the script loads
+    autoConnectWallet();
+
+</script>
 </html>
