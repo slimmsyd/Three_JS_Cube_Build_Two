@@ -13,28 +13,37 @@
     <link rel="icon" href="./assets/img/favicon.png" />
 
     <!-- CSS -->
-    <link rel="stylesheet" href="./css/main.css" />
 
     <link rel="stylesheet" href="./css/main.css" />
 
     <script>
+
+document.addEventListener('DOMContentLoaded', () => {
+  const getQueryParams = () => {
+    const params = {};
+    const queryString = window.location.search.slice(1);
+    queryString.split('&').forEach(param => {
+      const [key, value] = param.split('=');
+      params[key] = decodeURIComponent(value);
+    });
+    return params;
+  };
+
+  // Extract the 'address' parameter from the URL
+  const params = getQueryParams();
+  const walletAddress = params.address; // Assuming 'address' is the parameter name
+
+  console.log("Wallet address from URL:", walletAddress);
+
+  if (walletAddress) {
+    // Use this wallet address in your logic, like fetching data based on this address
+  } else {
+    console.error('No wallet address found in URL parameters.');
+  }
+});
+
       document.addEventListener("DOMContentLoaded", () => {
-        const getQueryParams = () => {
-          const params = {};
-          const queryString = window.location.search.slice(1);
-          queryString.split("&").forEach((param) => {
-            const [key, value] = param.split("=");
-            params[key] = decodeURIComponent(value);
-          });
-          return params;
-        };
-
-        // Extract the address parameter from the URL
-        const params = getQueryParams();
-        const walletAddress = params.address; // Assuming 'address' is the parameter name
-
-        console.log("Wallet address from URL:", walletAddress);
-
+        
         // Function to fetch the wallet address from the external server
         const fetchWalletAddressFromExternalServer = async () => {
           try {
