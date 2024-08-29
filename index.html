@@ -157,16 +157,31 @@
     } from "https://esm.sh/viem";
     import { baseSepolia } from "https://esm.sh/viem/chains";
 
-    // Create a client that connects the user's account to Ethereum Sepolia
+
+    // Function to auto-connect the wallet and log the address
+    async function autoConnectWallet() {
+      try {
+
+        if (typeof window.ethereum === 'undefined') {
+              throw new Error('Ethereum wallet is not available. Please install MetaMask or another wallet extension.');
+            }
+
+                // Create a client that connects the user's account to Ethereum Sepolia
     const walletClient = createWalletClient({
       chain: baseSepolia,
       transport: custom(window.ethereum),
     });
 
-    // Function to auto-connect the wallet and log the address
-    async function autoConnectWallet() {
-      try {
-        const accounts = await walletClient.requestAddresses();
+
+
+    const accounts = await window.ethereum.request({ method: 'eth_accounts' });
+
+
+
+    if (!accounts || accounts.length === 0) {
+              throw new Error('No accounts found. Please make sure your wallet is connected.');
+            }
+
 
         // Get the first address in the accounts array
         const [address] = accounts;
