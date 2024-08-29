@@ -34,44 +34,43 @@ const isMobile = window.mobileCheck();
 // CLASS
 export class CubeViewer {
   constructor() {
-    //   this.renderCubes();  // Render cubes based on the updated cubeBank
+      this.renderCubes();  // Render cubes based on the updated cubeBank
   }
   init() {
     animate();
   }
 
-  //     renderCubes() {
-  //         // Clear any previous cubes before rendering new ones
-  //         cubeGroup.clear();
+      renderCubes() {
+          // Clear any previous cubes before rendering new ones
+          cubeGroup.clear();
 
-  //         // Loop over the cubeBank entries and render the cubes
-  //         let dataCubes = Object.entries(cubeBank);
-
-  //         console.log("Loggin data cubes", dataCubes)
-  //         for(let i=0;i<dataCubes.length;i++){
-
-  //             let div = document.createElement('div');
-  //             div.classList.add("cube-icon");
-  //             div.setAttribute("id", "icon_" + dataCubes[i][0]);
-
-  //             let img = document.createElement('img');
-  //             img.src = "../assets/img/cube_thumbnails/icon_" + dataCubes[i][0] + ".png";
-  //             div.appendChild(img);
-
-  //             document.getElementById('inventory-holder_content').appendChild( div );
-  //             div.addEventListener("click", (event) => {
-  //                 if (event.target.classList.contains('off')) {
-  //                     div.classList.remove("off");
-  //                     div.classList.add("loading");
-  //                     removeModel(dataCubes[i], div);
-  //                 }else{
-  //                     div.classList.add("loading");
-  //                     loadModel(dataCubes[i], div);
-  //                 }
-
-  //             });
-  //     }
-  // }
+          // Loop over the cubeBank entries and render the cubes
+          let dataCubes = Object.entries(cubeBank);
+          for (let i = 0; i < dataCubes.length; i++) {
+            let div = document.createElement("div");
+            div.classList.add("cube-icon");
+            div.setAttribute("id", + dataCubes[i][0]);
+          
+            let img = document.createElement("img");
+            
+            img.src = "../assets/img/cube_thumbnails/" + dataCubes[i][1].icon;
+            div.appendChild(img);
+          
+          
+          
+            document.getElementById("inventory-holder_content").appendChild(div);
+            div.addEventListener("click", (event) => {
+              if (event.target.classList.contains("off")) {
+                div.classList.remove("off");
+                div.classList.add("loading");
+                removeModel(dataCubes[i], div);
+              } else {
+                div.classList.add("loading");
+                loadModel(dataCubes[i], div);
+              }
+            });
+      }
+  }
 }
 
 // CONTAINER

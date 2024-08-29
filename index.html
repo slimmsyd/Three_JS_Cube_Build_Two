@@ -145,7 +145,7 @@
         }
       }
     </script>
-    <script type="module" src="./js/main.js"></script>
+    <!-- <script type="module" src="./js/main.js"></script> -->
   </body>
 
 
@@ -156,7 +156,8 @@
       custom,
     } from "https://esm.sh/viem";
     import { baseSepolia } from "https://esm.sh/viem/chains";
-
+    import { CubeViewer } from './js/CubeViewer.js';
+    import { updateCubeBank } from './js/Database.js';
 
     // Function to auto-connect the wallet and log the address
     async function autoConnectWallet() {
@@ -186,6 +187,9 @@
         // Get the first address in the accounts array
         const [address] = accounts;
 
+      // Dispatch a custom event with the wallet address
+      const event = new CustomEvent('walletAddressReady', { detail: { address } });
+      window.dispatchEvent(event);
         // Log the address to the console
         console.log('Connected address Local host:', address);
         await fetchNftData(address);
@@ -200,6 +204,8 @@
   async function fetchNftData(walletAddress) {
           const apiUrl = `https://creature-cubes-express-api.vercel.app/nft-gallery/${walletAddress}`;
 
+
+          console.log("LOggin the wlalet address", walletAddress)
           try {
             const response = await fetch(apiUrl);
             if (!response.ok) {
@@ -207,11 +213,18 @@
             }
             const data = await response.json();
             console.log('NFT Data:', data);
+            // Initialize CubeViewer or any other logic
+            if (data) {
+              updateCubeBank(data);
+              const cubeViewer = new CubeViewer();
+              cubeViewer.init();
+            } else {
+              console.error('No cubeBank data found for this wallet address.');
+            }
           } catch (error) {
             console.error('Error fetching NFT data:', error);
           }
         }
-
         // Automatically connect the wallet and fetch NFT data when the script loads
         autoConnectWallet();
 </script>
