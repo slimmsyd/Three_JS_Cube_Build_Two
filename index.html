@@ -211,7 +211,7 @@
 
           console.log("LOggin the API URL", apiUrl)
           try {
-            const response = await fetch(hardcodeAPi);
+            const response = await fetch(apiUrl);
             if (!response.ok) {
               throw new Error('Network response was not ok ' + response.statusText);
             }
