@@ -145,10 +145,11 @@
       // Automatically connect the wallet when the script loads
       // Function to fetch NFT data using the connected wallet address
       async function fetchNftData(walletAddress) {
+  
         const apiUrl = `https://creature-cubes-express-api.vercel.app/nft-gallery/${walletAddress}`;
-  
-        // const hardcodeapi = "https://creature-cubes-express-api.vercel.app/nft-gallery/0x24e259e42dA2f27071e37D318489106f0DF7310E"
-  
+
+        // const hardCode = `https://creature-cubes-express-api.vercel.app/nft-gallery/0x0CCa6097aDFBF8F285F2De6f40E1FCc390528B68`;
+
         try {
           const response = await fetch(apiUrl);
           if (!response.ok) {
