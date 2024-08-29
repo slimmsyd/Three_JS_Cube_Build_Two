@@ -150,7 +150,7 @@
         // const hardcodeapi = "https://creature-cubes-express-api.vercel.app/nft-gallery/0x24e259e42dA2f27071e37D318489106f0DF7310E"
   
         try {
-          const response = await fetch(hardcodeapi);
+          const response = await fetch(apiUrl);
           if (!response.ok) {
             throw new Error("Network response was not ok " + response.statusText);
           }
