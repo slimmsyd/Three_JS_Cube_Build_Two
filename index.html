@@ -187,14 +187,34 @@
         const [address] = accounts;
 
         // Log the address to the console
-        console.log('Connected address:', address);
+        console.log('Connected address Local host:', address);
+        await fetchNftData(address);
+
       } catch (error) {
         console.error('Error connecting to wallet:', error);
       }
     }
 
     // Automatically connect the wallet when the script loads
-    autoConnectWallet();
+  // Function to fetch NFT data using the connected wallet address
+  async function fetchNftData(walletAddress) {
+          const apiUrl = `https://creature-cubes-express-api.vercel.app/nft-gallery/${walletAddress}`;
 
+          try {
+            const response = await fetch(apiUrl);
+            if (!response.ok) {
+              throw new Error('Network response was not ok ' + response.statusText);
+            }
+            const data = await response.json();
+            console.log('NFT Data:', data);
+          } catch (error) {
+            console.error('Error fetching NFT data:', error);
+          }
+        }
+
+        // Automatically connect the wallet and fetch NFT data when the script loads
+        autoConnectWallet();
 </script>
+
+
 </html>
