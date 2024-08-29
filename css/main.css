@@ -239,8 +239,9 @@ path, rect{
             }
             
             #inventory-holder_content::-webkit-scrollbar-thumb {
-                
                 border-radius: 10px; /* Rounded corners for the scrollbar thumb */
+                border: 2px solid transparent; /* Adds some spacing to avoid the thumb from touching edges */
+                box-sizing: border-box; /* Ensures the border is included within the thumb dimensions */
             }
             
             #inventory-holder_content::-webkit-scrollbar-track {
