@@ -19,14 +19,19 @@
 
 
     <script>
-axios.get('https://three-js-cube-build-two.vercel.app/address')
-  .then(function (response) {
-    console.log('Success:', response.data);
-    // Process your data here
-  })
-  .catch(function (error) {
-    console.log('Error:', error);
-  });
+window.addEventListener('message', (event) => {
+  // Ensure the message comes from the expected origin
+  if (event.origin !== 'https://three-js-cube-build-two.vercel.app') return;
+
+  const walletAddress = event.data.walletAddress;
+
+  if (walletAddress) {
+    console.log('Wallet address received from iframe:', walletAddress);
+    // Now you can use the wallet address in the parent window
+  } else {
+    console.error('No wallet address received from iframe.');
+  }
+});
 
     </script>
   </head>
