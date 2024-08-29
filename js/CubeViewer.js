@@ -40,37 +40,40 @@ export class CubeViewer {
     animate();
   }
 
-      renderCubes() {
-          // Clear any previous cubes before rendering new ones
-          cubeGroup.clear();
+  renderCubes() {
+    // Clear any previous cubes before rendering new ones
+    cubeGroup.clear();
 
-          // Loop over the cubeBank entries and render the cubes
-          let dataCubes = Object.entries(cubeBank);
-          for (let i = 0; i < dataCubes.length; i++) {
-            let div = document.createElement("div");
-            div.classList.add("cube-icon");
-            div.setAttribute("id", + dataCubes[i][0]);
-          
-            let img = document.createElement("img");
-            
-            img.src = "../assets/img/cube_thumbnails/" + dataCubes[i][1].icon;
-            div.appendChild(img);
-          
-          
-          
-            document.getElementById("inventory-holder_content").appendChild(div);
-            div.addEventListener("click", (event) => {
-              if (event.target.classList.contains("off")) {
+    // Loop over the cubeBank entries and render the cubes
+    let dataCubes = Object.entries(cubeBank);
+
+    console.log("Logging the data cubes", dataCubes);
+    for (let i = 0; i < dataCubes.length; i++) {
+        // Get the inner object, which holds the actual cube data
+        let cubeEntry = Object.entries(dataCubes[i][1])[0]; // This gets ["31", { "file": "31.glb", "icon": "31.png" }]
+        
+        let div = document.createElement("div");
+        div.classList.add("cube-icon");
+        div.setAttribute("id", cubeEntry[0]); // Setting the ID to "31", "33", etc.
+      
+        let img = document.createElement("img");
+        img.src = "../assets/img/cube_thumbnails/" + cubeEntry[1].icon; // Accessing the icon property
+        div.appendChild(img);
+      
+        document.getElementById("inventory-holder_content").appendChild(div);
+        div.addEventListener("click", (event) => {
+            if (event.target.classList.contains("off")) {
                 div.classList.remove("off");
                 div.classList.add("loading");
-                removeModel(dataCubes[i], div);
-              } else {
+                removeModel(cubeEntry[1], div);
+            } else {
                 div.classList.add("loading");
-                loadModel(dataCubes[i], div);
-              }
-            });
-      }
-  }
+                loadModel(cubeEntry[1], div);
+            }
+        });
+    }
+}
+
 }
 
 // CONTAINER

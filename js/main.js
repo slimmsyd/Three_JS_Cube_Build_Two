@@ -7,5 +7,4 @@ cubeViewer.init();
 
 
 
-console.log("LOGGI MAIN")
 
