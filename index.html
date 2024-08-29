@@ -205,7 +205,6 @@
           const apiUrl = `https://creature-cubes-express-api.vercel.app/nft-gallery/${walletAddress}`;
 
 
-          console.log("LOggin the wlalet address", walletAddress)
           try {
             const response = await fetch(apiUrl);
             if (!response.ok) {
