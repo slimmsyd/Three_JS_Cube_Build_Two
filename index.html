@@ -135,7 +135,6 @@
           });
           window.dispatchEvent(event);
           // Log the address to the console
-          console.log("Connected address Local host:", address);
           await fetchNftData(address);
         } catch (error) {
           console.error("Error connecting to wallet:", error);
@@ -169,7 +168,7 @@
           console.error("Error fetching NFT data:", error);
         }
       } 
-      
+
       // Automatically connect the wallet and fetch NFT data when the script loads
       autoConnectWallet();
     </script>

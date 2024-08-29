@@ -678,9 +678,7 @@ function loadModel(cubeData, div) {
   //nodes
   let cube = cubeData;
 
-  console.log("LOgging cube data", cubeData)
-  console.log("LOgging cube data", cube)
-
+ 
   // group
   let group = new THREE.Group();
   group.name = "cube-" + cubeData[0];
@@ -715,7 +713,6 @@ function loadModel(cubeData, div) {
 
   //load cube
 
-  console.log("Loging the cube before laod", cube)
   loadCube(group, cube, div, slot);
 }
 
