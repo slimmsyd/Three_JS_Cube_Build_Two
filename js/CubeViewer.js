@@ -8,6 +8,11 @@ import { RGBELoader } from "three/addons/loaders/RGBELoader.js";
 //
 import { cubeBank } from "scripts/Database.js";
 
+
+
+
+
+
 //
 window.mobileCheck = function () {
   let check = false;
@@ -203,14 +208,19 @@ scene.add(cubeGroup);
 
 // CUBES
 let dataCubes = Object.entries(cubeBank);
+console.log("LOgging data cubes" ,dataCubes)
 for (let i = 0; i < dataCubes.length; i++) {
   let div = document.createElement("div");
   div.classList.add("cube-icon");
-  div.setAttribute("id", "icon_" + dataCubes[i][0]);
+  div.setAttribute("id", + dataCubes[i][0]);
 
   let img = document.createElement("img");
+  
   img.src = "../assets/img/cube_thumbnails/" + dataCubes[i][1].icon;
   div.appendChild(img);
+
+
+  console.log("Logging image", img)
 
   document.getElementById("inventory-holder_content").appendChild(div);
   div.addEventListener("click", (event) => {

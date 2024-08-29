@@ -2,9 +2,22 @@
 import { CubeViewer } from './CubeViewer.js';
 // import { updateCubeBank } from './Database.js';
 
-
 const cubeViewer = new CubeViewer();
 cubeViewer.init();
+
+
+
+window.initMainScript = async function(walletAddress) {
+    // You can now use walletAddress in your main.js script
+    console.log("Initializing main script with wallet address:", walletAddress);
+  
+    // Initialize CubeViewer or any other logic
+   
+    // If you need to fetch and update cubeBank based on the wallet address
+    await fetchAndUpdateCubeBank(walletAddress);
+  };
+
+  
 
 // const fetchAndUpdateCubeBank = async (walletAddress) => {
 //   try {
