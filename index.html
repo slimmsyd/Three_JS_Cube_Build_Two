@@ -24,6 +24,8 @@ window.onload = function() {
   const urlParams = new URLSearchParams(window.location.search);
   const walletAddress = urlParams.get('address');
 
+  console.log("LOgogng on window load", walletAddress)
+
   if (walletAddress) {
     window.parent.postMessage(
       { type: 'walletAddress', value: walletAddress },
