@@ -219,11 +219,32 @@ path, rect{
             #inventory-holder_content{
                 --pad:10px;
                 position:absolute;
-                width:calc(100% - (var(--pad)*2));
+                width: 100%;
+                /* width:calc(100% - (var(--pad)*2)); */
                 height:calc(100% - (var(--pad)*2));
                 left:0px;
                 top:0px;
                 padding:var(--pad);
+                background: transparent;
+                overflow: scroll;
+                /* box-sizing: border-box;  */
+            }
+            
+            /* Optional: Styling the scrollbar to make it less intrusive */
+            #inventory-holder_content::-webkit-scrollbar {
+                background: transparent;
+
+                width: 8px; /* Width of the scrollbar */
+                height: 8px; /* Height of the scrollbar (for horizontal scroll) */
+            }
+            
+            #inventory-holder_content::-webkit-scrollbar-thumb {
+                
+                border-radius: 10px; /* Rounded corners for the scrollbar thumb */
+            }
+            
+            #inventory-holder_content::-webkit-scrollbar-track {
+                background: transparent; /* Background of the scrollbar track */
             }
             #inventory-holder_content.loading{
                 pointer-events:none;
