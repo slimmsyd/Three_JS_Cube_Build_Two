@@ -155,11 +155,11 @@
       createWalletClient,
       custom,
     } from "https://esm.sh/viem";
-    import { sepolia } from "https://esm.sh/viem/chains";
+    import { baseSepolia } from "https://esm.sh/viem/chains";
 
     // Create a client that connects the user's account to Ethereum Sepolia
     const walletClient = createWalletClient({
-      chain: sepolia,
+      chain: baseSepolia,
       transport: custom(window.ethereum),
     });
 
