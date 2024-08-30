@@ -1,77 +1,168 @@
 <!DOCTYPE html>
 <html>
-  <head> 
-    <meta charset="utf-8">
+  <head>
+    <meta charset="utf-8" />
     <title>Cubes Gallery</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="">
-    <meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content="" />
+    <meta
+      name="viewport"
+      content="width=device-width, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no"
+    />
 
-    <link rel=icon href="./assets/img/favicon.png">
- 
+    <link rel="icon" href="./assets/img/favicon.png" />
+
     <!-- CSS -->
-    <link rel="stylesheet" href="./css/main.css">
-
+    <link rel="stylesheet" href="./css/main.css" />
   </head>
-  <body> 
-
-    
-
+  <body>
     <!-- CREATURE UI -->
     <div id="creature-ui">
+      <div class="nav-bar">
+        <div class="nav-sub wallet">
+          <a href="https://creaturecubes.art/" id="wallet-address">mint more</a>
 
-
-
-      <div class = "nav-bar">
-
-        <div class = "nav-sub">
-          <a href = "https://creaturecubes.art/">mint more</a>
-
-          <img src = "./assets/img/gallery-button/GalleryButton_Normal2x.png" />
+          <img
+            id="wallet-button"
+            src="/assets/img/wallet-button/WalletButton_Normal4x.png"
+          />
         </div>
-   
+
+        <div class="nav-sub">
+          <a href="https://creaturecubes.art/">mint more</a>
+
+          <img
+            id="gallery-button"
+            src="/assets/img/gallery-button/GalleryButton_Normal2x.png"
+          />
+        </div>
+
+        <div class="nav-sub custom">
+          <a href="https://opensea.io/collection/creature-cubes">opensea</a>
+
+          <span>
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 100 100"
+              width="30"
+              height="30"
+            >
+              <circle cx="50" cy="50" fill="#ffff" r="50" />
+              <g fill="#C1292D">
+                <path
+                  d="M24.668 51.68l.216-.339L37.89 30.993a.445.445 0 0 1 .78.057c2.173 4.87 4.048 10.926 3.17 14.697-.375 1.551-1.402 3.652-2.558 5.594-.15.283-.314.56-.488.827a.442.442 0 0 1-.37.195H25.048c-.36 0-.57-.39-.38-.683z"
+                />
+                <path
+                  d="M82.644 55.461v3.22c0 .186-.113.35-.277.422-1.007.432-4.454 2.014-5.887 4.007-3.658 5.09-6.452 12.37-12.699 12.37h-26.06C28.485 75.48 21 67.97 21 58.702v-.297c0-.247.2-.447.447-.447h14.528c.287 0 .498.267.472.55a4.959 4.959 0 0 0 .519 2.789 5.111 5.111 0 0 0 4.582 2.846h7.192v-5.615h-7.11a.458.458 0 0 1-.37-.72c.078-.118.165-.24.257-.38a51.806 51.806 0 0 0 2.59-4.13c.652-1.14 1.284-2.358 1.792-3.58.103-.221.185-.447.267-.668.139-.39.283-.755.386-1.12.102-.308.185-.632.267-.935.241-1.038.344-2.137.344-3.277 0-.447-.02-.915-.062-1.362-.02-.488-.082-.976-.144-1.464a15.176 15.176 0 0 0-.2-1.305 21.99 21.99 0 0 0-.41-1.952l-.057-.246c-.124-.447-.226-.873-.37-1.32a49.81 49.81 0 0 0-1.367-4.048c-.18-.509-.385-.997-.59-1.485-.303-.735-.612-1.402-.894-2.034-.144-.288-.267-.55-.39-.817a28.758 28.758 0 0 0-.427-.894c-.103-.22-.221-.426-.303-.632l-.879-1.623a.286.286 0 0 1 .324-.416l5.497 1.49h.015c.01 0 .016.005.02.005l.725.2.796.226.293.082v-3.267c0-1.577 1.264-2.856 2.825-2.856.781 0 1.49.318 1.999.837.508.52.827 1.228.827 2.02v4.849l.585.164a.468.468 0 0 1 .134.067c.144.108.35.267.611.462.206.164.427.365.694.57.529.427 1.16.976 1.854 1.608.185.16.365.324.53.488a42.349 42.349 0 0 1 2.85 2.887c.268.303.53.611.797.935.267.329.55.652.796.976.324.432.673.879.976 1.346.144.221.308.447.447.668.39.59.734 1.202 1.063 1.813.139.283.283.591.406.894.365.817.652 1.65.837 2.481.057.18.098.375.118.55v.041c.062.247.083.509.103.776a8.298 8.298 0 0 1-.144 2.563 9.34 9.34 0 0 1-.303 1.074c-.123.35-.246.714-.406 1.058a14.347 14.347 0 0 1-1.104 2.096c-.139.246-.303.508-.468.755-.18.262-.364.509-.529.75-.226.308-.467.632-.714.92-.22.303-.447.606-.693.873a33.57 33.57 0 0 1-1.017 1.16c-.206.242-.427.489-.653.71-.22.246-.447.467-.652.673-.344.344-.632.611-.873.832l-.565.519a.461.461 0 0 1-.303.113H54.39v5.615h5.507a5.152 5.152 0 0 0 3.349-1.239c.324-.282 1.736-1.505 3.406-3.349a.427.427 0 0 1 .21-.128l15.211-4.398a.449.449 0 0 1 .57.432z"
+                />
+              </g>
+            </svg>
+          </span>
+
+          <img
+            id="social-button"
+            src="/assets/img/socials-button/SocialsButton_Normal4x.png"
+          />
+        </div>
       </div>
 
       <!--  -->
       <div id="model-viewer_container">
-
         <!-- THREE -->
         <div id="threeD-container"></div>
 
         <!-- POPOUT -->
         <div id="inventory_container">
-
           <!-- THUMB -->
           <button id="inventory-holder_thumb">
-            <svg id="inventory-holder_thumb_svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 53.98 52.25">
+            <svg
+              id="inventory-holder_thumb_svg"
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 53.98 52.25"
+            >
               <g>
                 <g>
-                  <path d="M9.14,0h30.36c5.04,0,9.13,4.09,9.13,9.13v28.62c0,5.04-4.09,9.13-9.13,9.13H9.13c-5.04,0-9.13-4.09-9.13-9.13V9.14C0,4.09,4.09,0,9.14,0Z"/>
-                  <path d="M9.39.26h30.36c5.04,0,9.13,4.09,9.13,9.13v28.62c0,5.04-4.09,9.13-9.13,9.13H9.39c-5.04,0-9.13-4.09-9.13-9.13V9.39C.26,4.35,4.35.26,9.39.26Z"/>
-                  <path d="M9.65.51h30.36c5.04,0,9.13,4.09,9.13,9.13v28.62c0,5.04-4.09,9.13-9.13,9.13H9.64c-5.04,0-9.13-4.09-9.13-9.13V9.65C.51,4.6,4.6.51,9.65.51Z"/>
-                  <path d="M9.9.77h30.36c5.04,0,9.13,4.09,9.13,9.13v28.62c0,5.04-4.09,9.13-9.13,9.13H9.9c-5.04,0-9.13-4.09-9.13-9.13V9.9C.77,4.86,4.86.77,9.9.77Z"/>
-                  <path d="M10.16,1.02h30.36c5.04,0,9.13,4.09,9.13,9.13v28.62c0,5.04-4.09,9.13-9.13,9.13H10.15c-5.04,0-9.13-4.09-9.13-9.13V10.16C1.02,5.11,5.11,1.02,10.16,1.02Z"/>
-                  <path d="M10.41,1.28h30.36c5.04,0,9.13,4.09,9.13,9.13v28.62c0,5.04-4.09,9.13-9.13,9.13H10.41c-5.04,0-9.13-4.09-9.13-9.13V10.41C1.28,5.37,5.37,1.28,10.41,1.28Z"/>
-                  <path d="M10.67,1.53h30.36c5.04,0,9.13,4.09,9.13,9.13v28.62c0,5.04-4.09,9.13-9.13,9.13H10.66c-5.04,0-9.13-4.09-9.13-9.13V10.67C1.53,5.62,5.62,1.53,10.67,1.53Z"/>
-                  <path d="M10.92,1.79h30.36c5.04,0,9.13,4.09,9.13,9.13v28.62c0,5.04-4.09,9.13-9.13,9.13H10.92c-5.04,0-9.13-4.09-9.13-9.13V10.92C1.79,5.88,5.88,1.79,10.92,1.79Z"/>
-                  <path d="M11.18,2.04h30.36c5.04,0,9.13,4.09,9.13,9.13v28.62c0,5.04-4.09,9.13-9.13,9.13H11.17c-5.04,0-9.13-4.09-9.13-9.13V11.18C2.04,6.13,6.13,2.04,11.18,2.04Z"/>
-                  <path d="M11.43,2.3h30.36c5.04,0,9.13,4.09,9.13,9.13v28.62c0,5.04-4.09,9.13-9.13,9.13H11.43c-5.04,0-9.13-4.09-9.13-9.13V11.43C2.3,6.39,6.39,2.3,11.43,2.3Z"/>
-                  <path d="M11.69,2.55h30.36c5.04,0,9.13,4.09,9.13,9.13v28.62c0,5.04-4.09,9.13-9.13,9.13H11.68c-5.04,0-9.13-4.09-9.13-9.13V11.69C2.55,6.64,6.64,2.55,11.69,2.55Z"/>
-                  <path d="M11.94,2.81h30.36c5.04,0,9.13,4.09,9.13,9.13v28.62c0,5.04-4.09,9.13-9.13,9.13H11.94c-5.04,0-9.13-4.09-9.13-9.13V11.94C2.81,6.9,6.9,2.81,11.94,2.81Z"/>
-                  <path d="M12.2,3.06h30.36c5.04,0,9.13,4.09,9.13,9.13v28.62c0,5.04-4.09,9.13-9.13,9.13H12.19c-5.04,0-9.13-4.09-9.13-9.13V12.2C3.06,7.15,7.15,3.06,12.2,3.06Z"/>
-                  <path d="M12.45,3.32h30.36c5.04,0,9.14,4.09,9.14,9.14v28.62c0,5.04-4.09,9.13-9.13,9.13H12.45c-5.04,0-9.13-4.09-9.13-9.13V12.45C3.32,7.41,7.41,3.32,12.45,3.32Z"/>
-                  <path d="M12.71,3.57h30.36c5.04,0,9.13,4.09,9.13,9.13v28.62c0,5.04-4.09,9.13-9.13,9.13H12.7c-5.04,0-9.13-4.09-9.13-9.13V12.71C3.57,7.66,7.66,3.57,12.71,3.57Z"/>
-                  <path d="M12.96,3.83h30.36c5.04,0,9.13,4.09,9.13,9.13v28.62c0,5.04-4.09,9.13-9.13,9.13H12.96c-5.04,0-9.13-4.09-9.13-9.13V12.96C3.83,7.92,7.92,3.83,12.96,3.83Z"/>
-                  <path d="M13.22,4.08h30.36c5.04,0,9.14,4.09,9.14,9.14v28.62c0,5.04-4.09,9.13-9.13,9.13H13.22c-5.04,0-9.13-4.09-9.13-9.13V13.22c0-5.04,4.09-9.14,9.14-9.14Z"/>
-                  <path d="M13.47,4.34h30.36c5.04,0,9.13,4.09,9.13,9.13v28.62c0,5.04-4.09,9.13-9.13,9.13H13.47c-5.04,0-9.13-4.09-9.13-9.13V13.47c0-5.04,4.09-9.14,9.14-9.14Z"/>
-                  <path d="M13.73,4.59h30.36c5.04,0,9.13,4.09,9.13,9.13v28.62c0,5.04-4.09,9.13-9.13,9.13H13.73c-5.04,0-9.13-4.09-9.13-9.13V13.73c0-5.04,4.09-9.14,9.14-9.14Z"/>
-                  <path d="M13.98,4.85h30.36c5.04,0,9.13,4.09,9.13,9.13v28.62c0,5.04-4.09,9.13-9.13,9.13H13.98c-5.04,0-9.13-4.09-9.13-9.13V13.98c0-5.04,4.09-9.14,9.14-9.14Z"/>
-                  <path d="M14.24,5.1h30.36c5.04,0,9.14,4.09,9.14,9.14v28.62c0,5.04-4.09,9.13-9.13,9.13H14.24c-5.04,0-9.13-4.09-9.13-9.13V14.24c0-5.04,4.09-9.14,9.14-9.14Z"/>
-                  <path d="M14.49,5.36h30.36c5.04,0,9.13,4.09,9.13,9.13v28.62c0,5.04-4.09,9.13-9.13,9.13H14.49c-5.04,0-9.13-4.09-9.13-9.13V14.49c0-5.04,4.09-9.14,9.14-9.14Z"/>
+                  <path
+                    d="M9.14,0h30.36c5.04,0,9.13,4.09,9.13,9.13v28.62c0,5.04-4.09,9.13-9.13,9.13H9.13c-5.04,0-9.13-4.09-9.13-9.13V9.14C0,4.09,4.09,0,9.14,0Z"
+                  />
+                  <path
+                    d="M9.39.26h30.36c5.04,0,9.13,4.09,9.13,9.13v28.62c0,5.04-4.09,9.13-9.13,9.13H9.39c-5.04,0-9.13-4.09-9.13-9.13V9.39C.26,4.35,4.35.26,9.39.26Z"
+                  />
+                  <path
+                    d="M9.65.51h30.36c5.04,0,9.13,4.09,9.13,9.13v28.62c0,5.04-4.09,9.13-9.13,9.13H9.64c-5.04,0-9.13-4.09-9.13-9.13V9.65C.51,4.6,4.6.51,9.65.51Z"
+                  />
+                  <path
+                    d="M9.9.77h30.36c5.04,0,9.13,4.09,9.13,9.13v28.62c0,5.04-4.09,9.13-9.13,9.13H9.9c-5.04,0-9.13-4.09-9.13-9.13V9.9C.77,4.86,4.86.77,9.9.77Z"
+                  />
+                  <path
+                    d="M10.16,1.02h30.36c5.04,0,9.13,4.09,9.13,9.13v28.62c0,5.04-4.09,9.13-9.13,9.13H10.15c-5.04,0-9.13-4.09-9.13-9.13V10.16C1.02,5.11,5.11,1.02,10.16,1.02Z"
+                  />
+                  <path
+                    d="M10.41,1.28h30.36c5.04,0,9.13,4.09,9.13,9.13v28.62c0,5.04-4.09,9.13-9.13,9.13H10.41c-5.04,0-9.13-4.09-9.13-9.13V10.41C1.28,5.37,5.37,1.28,10.41,1.28Z"
+                  />
+                  <path
+                    d="M10.67,1.53h30.36c5.04,0,9.13,4.09,9.13,9.13v28.62c0,5.04-4.09,9.13-9.13,9.13H10.66c-5.04,0-9.13-4.09-9.13-9.13V10.67C1.53,5.62,5.62,1.53,10.67,1.53Z"
+                  />
+                  <path
+                    d="M10.92,1.79h30.36c5.04,0,9.13,4.09,9.13,9.13v28.62c0,5.04-4.09,9.13-9.13,9.13H10.92c-5.04,0-9.13-4.09-9.13-9.13V10.92C1.79,5.88,5.88,1.79,10.92,1.79Z"
+                  />
+                  <path
+                    d="M11.18,2.04h30.36c5.04,0,9.13,4.09,9.13,9.13v28.62c0,5.04-4.09,9.13-9.13,9.13H11.17c-5.04,0-9.13-4.09-9.13-9.13V11.18C2.04,6.13,6.13,2.04,11.18,2.04Z"
+                  />
+                  <path
+                    d="M11.43,2.3h30.36c5.04,0,9.13,4.09,9.13,9.13v28.62c0,5.04-4.09,9.13-9.13,9.13H11.43c-5.04,0-9.13-4.09-9.13-9.13V11.43C2.3,6.39,6.39,2.3,11.43,2.3Z"
+                  />
+                  <path
+                    d="M11.69,2.55h30.36c5.04,0,9.13,4.09,9.13,9.13v28.62c0,5.04-4.09,9.13-9.13,9.13H11.68c-5.04,0-9.13-4.09-9.13-9.13V11.69C2.55,6.64,6.64,2.55,11.69,2.55Z"
+                  />
+                  <path
+                    d="M11.94,2.81h30.36c5.04,0,9.13,4.09,9.13,9.13v28.62c0,5.04-4.09,9.13-9.13,9.13H11.94c-5.04,0-9.13-4.09-9.13-9.13V11.94C2.81,6.9,6.9,2.81,11.94,2.81Z"
+                  />
+                  <path
+                    d="M12.2,3.06h30.36c5.04,0,9.13,4.09,9.13,9.13v28.62c0,5.04-4.09,9.13-9.13,9.13H12.19c-5.04,0-9.13-4.09-9.13-9.13V12.2C3.06,7.15,7.15,3.06,12.2,3.06Z"
+                  />
+                  <path
+                    d="M12.45,3.32h30.36c5.04,0,9.14,4.09,9.14,9.14v28.62c0,5.04-4.09,9.13-9.13,9.13H12.45c-5.04,0-9.13-4.09-9.13-9.13V12.45C3.32,7.41,7.41,3.32,12.45,3.32Z"
+                  />
+                  <path
+                    d="M12.71,3.57h30.36c5.04,0,9.13,4.09,9.13,9.13v28.62c0,5.04-4.09,9.13-9.13,9.13H12.7c-5.04,0-9.13-4.09-9.13-9.13V12.71C3.57,7.66,7.66,3.57,12.71,3.57Z"
+                  />
+                  <path
+                    d="M12.96,3.83h30.36c5.04,0,9.13,4.09,9.13,9.13v28.62c0,5.04-4.09,9.13-9.13,9.13H12.96c-5.04,0-9.13-4.09-9.13-9.13V12.96C3.83,7.92,7.92,3.83,12.96,3.83Z"
+                  />
+                  <path
+                    d="M13.22,4.08h30.36c5.04,0,9.14,4.09,9.14,9.14v28.62c0,5.04-4.09,9.13-9.13,9.13H13.22c-5.04,0-9.13-4.09-9.13-9.13V13.22c0-5.04,4.09-9.14,9.14-9.14Z"
+                  />
+                  <path
+                    d="M13.47,4.34h30.36c5.04,0,9.13,4.09,9.13,9.13v28.62c0,5.04-4.09,9.13-9.13,9.13H13.47c-5.04,0-9.13-4.09-9.13-9.13V13.47c0-5.04,4.09-9.14,9.14-9.14Z"
+                  />
+                  <path
+                    d="M13.73,4.59h30.36c5.04,0,9.13,4.09,9.13,9.13v28.62c0,5.04-4.09,9.13-9.13,9.13H13.73c-5.04,0-9.13-4.09-9.13-9.13V13.73c0-5.04,4.09-9.14,9.14-9.14Z"
+                  />
+                  <path
+                    d="M13.98,4.85h30.36c5.04,0,9.13,4.09,9.13,9.13v28.62c0,5.04-4.09,9.13-9.13,9.13H13.98c-5.04,0-9.13-4.09-9.13-9.13V13.98c0-5.04,4.09-9.14,9.14-9.14Z"
+                  />
+                  <path
+                    d="M14.24,5.1h30.36c5.04,0,9.14,4.09,9.14,9.14v28.62c0,5.04-4.09,9.13-9.13,9.13H14.24c-5.04,0-9.13-4.09-9.13-9.13V14.24c0-5.04,4.09-9.14,9.14-9.14Z"
+                  />
+                  <path
+                    d="M14.49,5.36h30.36c5.04,0,9.13,4.09,9.13,9.13v28.62c0,5.04-4.09,9.13-9.13,9.13H14.49c-5.04,0-9.13-4.09-9.13-9.13V14.49c0-5.04,4.09-9.14,9.14-9.14Z"
+                  />
                 </g>
-                <rect class="inr" x="2" y="2" width="44.63" height="42.89" rx="7.14" ry="7.14" />
+                <rect
+                  class="inr"
+                  x="2"
+                  y="2"
+                  width="44.63"
+                  height="42.89"
+                  rx="7.14"
+                  ry="7.14"
+                />
               </g>
-              <path d="M24.44,13.05c-.09-.04-.19-.04-.29,0l-9.6,3.64,9.74,3.83,9.74-3.83-9.6-3.64ZM13.77,29.62c0,.17.11.32.26.38l9.05,3.43v-10.78l-9.32-3.66v10.62h0ZM25.52,33.43l9.05-3.43c.16-.06.26-.21.26-.38v-10.62l-9.32,3.66v10.78h0ZM23.3,10.78c.65-.25,1.36-.25,2.01,0l10.13,3.84c1.1.42,1.83,1.47,1.83,2.65v12.35c0,1.18-.73,2.23-1.83,2.65l-10.13,3.84c-.65.25-1.36.25-2.01,0l-10.13-3.84c-1.1-.42-1.83-1.47-1.83-2.65v-12.35c0-1.18.73-2.23,1.83-2.65l10.13-3.84h0Z" style="fill: #fff;"/>
+              <path
+                d="M24.44,13.05c-.09-.04-.19-.04-.29,0l-9.6,3.64,9.74,3.83,9.74-3.83-9.6-3.64ZM13.77,29.62c0,.17.11.32.26.38l9.05,3.43v-10.78l-9.32-3.66v10.62h0ZM25.52,33.43l9.05-3.43c.16-.06.26-.21.26-.38v-10.62l-9.32,3.66v10.78h0ZM23.3,10.78c.65-.25,1.36-.25,2.01,0l10.13,3.84c1.1.42,1.83,1.47,1.83,2.65v12.35c0,1.18-.73,2.23-1.83,2.65l-10.13,3.84c-.65.25-1.36.25-2.01,0l-10.13-3.84c-1.1-.42-1.83-1.47-1.83-2.65v-12.35c0-1.18.73-2.23,1.83-2.65l10.13-3.84h0Z"
+                style="fill: #fff"
+              />
             </svg>
           </button>
 
@@ -80,32 +171,23 @@
             <button id="inventory-holder_exit-btn"></button>
             <div id="inventory-holder_content"></div>
           </div>
-          
         </div>
-
-        
-
       </div>
-      
-      
     </div>
 
-	
-	<!-- Main -->	
+    <!-- Main -->
     <script src="./assets/js/GSAP/gsap.min.js"></script>
     <script type="importmap">
-        {
-            "imports": {
-                "three": "./assets/js/three/build/three.webgpu.min.js",
-                "three/tsl": "./assets/js/three/build/three.webgpu.min.js",
-                "three/addons/": "./assets/js/three/jsm/",
-                "scripts/": "./js/"
-                
-            }
+      {
+        "imports": {
+          "three": "./assets/js/three/build/three.webgpu.min.js",
+          "three/tsl": "./assets/js/three/build/three.webgpu.min.js",
+          "three/addons/": "./assets/js/three/jsm/",
+          "scripts/": "./js/"
         }
+      }
     </script>
     <script type="module" src="./js/main.js"></script>
-
 
     <script type="module">
       // Import necessary functions from viem
@@ -113,7 +195,7 @@
       import { baseSepolia } from "https://esm.sh/viem/chains";
       import { CubeViewer } from "./js/CubeViewer.js";
       import { updateCubeBank } from "./js/Database.js";
-  
+
       // Function to auto-connect the wallet and log the address
       async function autoConnectWallet() {
         try {
@@ -122,42 +204,57 @@
               "Ethereum wallet is not available. Please install MetaMask or another wallet extension."
             );
           }
-  
+
           // Create a client that connects the user's account to Ethereum Sepolia
           const walletClient = createWalletClient({
             chain: baseSepolia,
             transport: custom(window.ethereum),
           });
-  
+
           const accounts = await window.ethereum.request({
             method: "eth_requestAccounts",
           });
-  
+
           if (!accounts || accounts.length === 0) {
             throw new Error(
               "No accounts found. Please make sure your wallet is connected."
             );
           }
-  
+
           // Get the first address in the accounts array
           const [address] = accounts;
-  
+
           // Dispatch a custom event with the wallet address
           const event = new CustomEvent("walletAddressReady", {
             detail: { address },
           });
           window.dispatchEvent(event);
+          function getFirstFourCharacters(address) {
+            // Ensure the address is a string and has the correct length
+            if (typeof address !== "string" || address.length !== 42) {
+              throw new Error("Invalid Ethereum address");
+            }
+
+            // Return the first 6 characters (0x + 4 characters)
+            return address.slice(0, 6);
+          }
+
+          const splitAddy = getFirstFourCharacters(address);
+
+          const walletAddressElement =
+            document.getElementById("wallet-address");
+          walletAddressElement.textContent = `${splitAddy}`;
+
           // Log the address to the console
           await fetchNftData(address);
         } catch (error) {
           console.error("Error connecting to wallet:", error);
         }
       }
-  
+
       // Automatically connect the wallet when the script loads
       // Function to fetch NFT data using the connected wallet address
       async function fetchNftData(walletAddress) {
-  
         const apiUrl = `https://creature-cubes-express-api.vercel.app/nft-gallery/${walletAddress}`;
 
         // const hardCode = `https://creature-cubes-express-api.vercel.app/nft-gallery/0x0CCa6097aDFBF8F285F2De6f40E1FCc390528B68`;
@@ -165,7 +262,9 @@
         try {
           const response = await fetch(apiUrl);
           if (!response.ok) {
-            throw new Error("Network response was not ok " + response.statusText);
+            throw new Error(
+              "Network response was not ok " + response.statusText
+            );
           }
           const data = await response.json();
           console.log("NFT Data:", data);
@@ -180,11 +279,10 @@
         } catch (error) {
           console.error("Error fetching NFT data:", error);
         }
-      } 
+      }
 
       // Automatically connect the wallet and fetch NFT data when the script loads
       autoConnectWallet();
     </script>
-
-  </body>  
+  </body>
 </html>
