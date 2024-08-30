@@ -72,6 +72,7 @@ path, rect{
 
 /* UI */
 #creature-ui{
+    padding-top: 2rem;
     position:absolute;
     z-index:100;
     height:100%;
@@ -336,5 +337,55 @@ path, rect{
 
             
 
+                @font-face {
+                    font-family: 'wwDigital';
+                    src: url('/fonts/namcoregular.woff2') format('woff2');
+                    font-weight: normal;
+                    font-style: normal;
+                }
+                
+
  
     
+
+                .nav-bar{
+                    z-index: 9999 !important;
+                    position: absolute;
+                    width: 70%;
+                    background: transparent;
+                    display: flex;
+                    justify-content: end;
+                    top:50px;
+                    right:10px;
+                    font-family: 'wwDigital';
+
+                    font-size: 10px;
+
+                    
+
+                    
+                }
+                .nav-sub{
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    width: 200px;
+                    color: white;
+                    font-size: 10px;
+                }
+                .nav-bar a {
+                    margin-top:15px;
+                    color:white;
+                    text-decoration: none;
+                    cursor: pointer;
+
+                }
+                .nav-bar img { 
+                    position: absolute;
+                    width: 180px;
+                    z-index: -1;
+                    cursor: pointer;
+                }
+                .stats_bl{
+                    display: none !important;
+                }
