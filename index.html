@@ -19,22 +19,31 @@
     <!-- CREATURE UI -->
     <div id="creature-ui">
       <div class="nav-bar">
-        <div class="nav-sub wallet">
-          <a href="https://creaturecubes.art/" id="wallet-address">mint more</a>
+
+        <div class="nav-sub wallet" id = "btn-connect-container" >
+
+          connect
 
           <img
-            id="wallet-button"
-            src="/assets/img/wallet-button/WalletButton_Normal4x.png"
-          />
+          id="btn-connect"
+          src="/assets/img/wallet-button/WalletButton_Normal4x.png"
+        />
+
+         
         </div>
 
-        <div class="nav-sub">
-          <a href="https://creaturecubes.art/">mint more</a>
+        <div class="nav-sub wallet" id="wallet-button">
+          <a id="selected-account">
+
+           
+          </a>
 
           <img
-            id="gallery-button"
-            src="/assets/img/gallery-button/GalleryButton_Normal2x.png"
-          />
+          id = "wallet-button-connect"
+          src="/assets/img/wallet-button/WalletButton_Normal4x.png"
+        />
+
+         
         </div>
 
         <div class="nav-sub custom">
@@ -187,7 +196,16 @@
         }
       }
     </script>
+    <script type="text/javascript" src="https://unpkg.com/web3@1.2.11/dist/web3.min.js"></script>
+    <script type="text/javascript" src="https://unpkg.com/web3modal@1.9.0/dist/index.js"></script>
+    <script type="text/javascript" src="https://unpkg.com/evm-chains@0.2.0/dist/umd/index.min.js"></script>
+    <script type="text/javascript" src="https://unpkg.com/@walletconnect/web3-provider@1.2.1/dist/umd/index.min.js"></script>
+    <script type="text/javascript" src="https://unpkg.com/fortmatic@2.0.6/dist/fortmatic.js"></script>
+
+
+    <script type="module"  src="./js/index.js"></script>
     <script type="module" src="./js/main.js"></script>
+
 
     <script type="module">
       // Import necessary functions from viem
@@ -196,93 +214,10 @@
       import { CubeViewer } from "./js/CubeViewer.js";
       import { updateCubeBank } from "./js/Database.js";
 
-      // Function to auto-connect the wallet and log the address
-      async function autoConnectWallet() {
-        try {
-          if (typeof window.ethereum === "undefined") {
-            throw new Error(
-              "Ethereum wallet is not available. Please install MetaMask or another wallet extension."
-            );
-          }
-
-          // Create a client that connects the user's account to Ethereum Sepolia
-          const walletClient = createWalletClient({
-            chain: baseSepolia,
-            transport: custom(window.ethereum),
-          });
-
-          const accounts = await window.ethereum.request({
-            method: "eth_requestAccounts",
-          });
-
-          if (!accounts || accounts.length === 0) {
-            throw new Error(
-              "No accounts found. Please make sure your wallet is connected."
-            );
-          }
-
-          // Get the first address in the accounts array
-          const [address] = accounts;
-
-          // Dispatch a custom event with the wallet address
-          const event = new CustomEvent("walletAddressReady", {
-            detail: { address },
-          });
-          window.dispatchEvent(event);
-          function getFirstFourCharacters(address) {
-            // Ensure the address is a string and has the correct length
-            if (typeof address !== "string" || address.length !== 42) {
-              throw new Error("Invalid Ethereum address");
-            }
-
-            // Return the first 6 characters (0x + 4 characters)
-            return address.slice(0, 6);
-          }
-
-          const splitAddy = getFirstFourCharacters(address);
-
-          const walletAddressElement =
-            document.getElementById("wallet-address");
-          walletAddressElement.textContent = `${splitAddy}`;
-
-          // Log the address to the console
-          await fetchNftData(address);
-        } catch (error) {
-          console.error("Error connecting to wallet:", error);
-        }
-      }
 
       // Automatically connect the wallet when the script loads
       // Function to fetch NFT data using the connected wallet address
-      async function fetchNftData(walletAddress) {
-        const apiUrl = `https://creature-cubes-express-api.vercel.app/nft-gallery/${walletAddress}`;
 
-        // const hardCode = `https://creature-cubes-express-api.vercel.app/nft-gallery/0x0CCa6097aDFBF8F285F2De6f40E1FCc390528B68`;
-
-        try {
-          const response = await fetch(apiUrl);
-          if (!response.ok) {
-            throw new Error(
-              "Network response was not ok " + response.statusText
-            );
-          }
-          const data = await response.json();
-          console.log("NFT Data:", data);
-          // Initialize CubeViewer or any other logic
-          if (data) {
-            updateCubeBank(data);
-            const cubeViewer = new CubeViewer();
-            cubeViewer.init();
-          } else {
-            console.error("No cubeBank data found for this wallet address.");
-          }
-        } catch (error) {
-          console.error("Error fetching NFT data:", error);
-        }
-      }
-
-      // Automatically connect the wallet and fetch NFT data when the script loads
-      autoConnectWallet();
     </script>
   </body>
 </html>
