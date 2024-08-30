@@ -183,30 +183,32 @@ scene.add(cursorMesh);
 const cubeGroup = new THREE.Group();
 scene.add(cubeGroup);
 
+console.log("Logigng scene", scene)
+
 // CUBES
-let dataCubes = Object.entries(cubeBank);
-for(let i=0;i<dataCubes.length;i++){
+// let dataCubes = Object.entries(cubeBank);
+// for(let i=0;i<dataCubes.length;i++){
 
-    let div = document.createElement('div');
-    div.classList.add("cube-icon");
-    div.setAttribute("id", "icon_" + dataCubes[i][0]);
+//     let div = document.createElement('div');
+//     div.classList.add("cube-icon");
+//     div.setAttribute("id", "icon_" + dataCubes[i][0]);
 
-    let img = document.createElement('img');
-    img.src = "../assets/img/cube_thumbnails/" + dataCubes[i][1].icon;
-    div.appendChild(img);
+//     let img = document.createElement('img');
+//     img.src = "../assets/img/cube_thumbnails/" + dataCubes[i][1].icon;
+//     div.appendChild(img);
 
-    document.getElementById('inventory-holder_content').appendChild( div );
-    div.addEventListener("click", (event) => {
-        if (event.target.classList.contains('off')) {
-            div.classList.remove("off");
-            div.classList.add("loading");
-            removeModel(dataCubes[i], div);
-        }else{
-            div.classList.add("loading");
-            loadModel(dataCubes[i], div);
-        }
-    });
-}
+//     document.getElementById('inventory-holder_content').appendChild( div );
+//     div.addEventListener("click", (event) => {
+//         if (event.target.classList.contains('off')) {
+//             div.classList.remove("off");
+//             div.classList.add("loading");
+//             removeModel(dataCubes[i], div);
+//         }else{
+//             div.classList.add("loading");
+//             loadModel(dataCubes[i], div);
+//         }
+//     });
+// }
 document.getElementById('inventory-holder_exit-btn').addEventListener("click", (event) => {
     document.getElementById( 'inventory-holder' ).style.display = 'none';
     document.getElementById( 'inventory-holder_thumb' ).style.display = 'block';
@@ -679,6 +681,8 @@ function loadModel(cubeData, div) {
   let cube = cubeData;
 
  
+
+  console.log("Logigng the cube model", cube)
   // group
   let group = new THREE.Group();
   group.name = "cube-" + cubeData[0];
@@ -718,8 +722,12 @@ function loadModel(cubeData, div) {
 
 function loadCube(group, cube, div){
 
-    loaderGLTF.load( '../assets/models/cubes/' + cube.file, function ( gltf ) {
+    loaderGLTF.load( './assets/models/cubes/' + cube.file, function ( gltf ) {
         let model = gltf.scene;
+
+        console.log("Loggin the model scen", cube.file)
+
+        
 
         model.position.set(0,-1,1);
         model.scale.set(1,1,1).multiplyScalar( 1.2 );

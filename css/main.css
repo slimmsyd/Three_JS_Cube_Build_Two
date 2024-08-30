@@ -102,10 +102,11 @@ rect {
 }
 
 #model-viewer_container {
-  z-index: 100;
+  /* z-index: 100; */
   position: absolute;
   width: 100%;
   height: 100%;
+  /* display: none; */
   /* top:50%;
         left:50%;
         transform: translate(-50%, -50%); */
@@ -427,6 +428,9 @@ rect {
   content: url("/assets/img/wallet-button/WalletButton_Hover4x.png");
 }
 
+a{
+    position: relative;
+}
 /* Click (active) state */
 #wallet-button:active {
   content: url("/assets/img/wallet-button/WalletButton_Clicked4x.png");
@@ -448,6 +452,7 @@ gap:40px;
   font-size: 10px;
 }
 .nav-sub {
+    position: relative;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -458,7 +463,15 @@ gap:40px;
 .nav-sub.custom a {
     margin-top:0px;
     margin-bottom: 20px;
+    display: inline-block;
 
+
+}
+
+.nav-bar a { 
+    display: inline-block;
+    text-decoration: none; /* Remove underline from link */
+    color: inherit; /* Inherit text color */
 }
 
 .nav-sub.custom span {
@@ -473,7 +486,19 @@ gap:40px;
 .nav-sub.wallet a{
     margin-top: 0px;
 
+
+
 }
+
+.nav-sub.wallet a {
+    display: inline-block;
+    text-decoration: none; /* Remove underline from link */
+    color: inherit; /* Inherit text color */
+  }
+  
+  .nav-sub.wallet img {
+    display: block; /* Ensures the image fills the anchor tag */
+  }
 
 
 .nav-bar a {
@@ -490,4 +515,15 @@ gap:40px;
 }
 .stats_bl {
   display: none !important;
+}
+#WEB3_CONNECT_MODAL_ID{
+  z-index: 9999;
+  position: relative;
+}
+
+
+
+#wallet-button{
+  display: none;
+  z-index: 99;
 }
