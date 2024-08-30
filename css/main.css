@@ -531,3 +531,10 @@ gap:40px;
 #selected-account{
   text-transform: lowercase;
 }
+
+.no-cubes-message{
+  font-family: "wwDigital";
+  padding-left: 20px;
+  line-height: 150%;
+  text-transform: lowercase;
+}
