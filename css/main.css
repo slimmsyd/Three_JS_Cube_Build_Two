@@ -424,14 +424,15 @@ rect {
 #social-button:active {
   content: url("/assets/img/socials-button/SocialsButton_Clicked4x.png");
 }
-#wallet-button:hover {
-  content: url("/assets/img/wallet-button/WalletButton_Hover4x.png");
-}
+
 
 a{
     position: relative;
 }
 /* Click (active) state */
+#wallet-button-two:active {
+  content: url("/assets/img/wallet-button/WalletButton_Clicked4x.png");
+}
 #wallet-button:active {
   content: url("/assets/img/wallet-button/WalletButton_Clicked4x.png");
 }
@@ -481,7 +482,7 @@ gap:40px;
 }
 .nav-sub.wallet img{
 
-    width: 155px;
+    width: 155px !important;
 }
 .nav-sub.wallet a{
     margin-top: 0px;
