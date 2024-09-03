@@ -48,7 +48,6 @@ export class CubeViewer {
     // Loop over the cubeBank entries and render the cubes
     let dataCubes = Object.entries(cubeBank);
 
-    console.log("Logging the data cubes", dataCubes);
 
     // Check if there are any cubes to render
     if (dataCubes.length === 0) {
@@ -219,7 +218,7 @@ scene.add(cursorMesh);
 const cubeGroup = new THREE.Group();
 scene.add(cubeGroup);
 
-console.log("Logigng scene", scene);
+// console.log("Logigng scene", scene);
 
 // CUBES
 // let dataCubes = Object.entries(cubeBank);
@@ -709,7 +708,9 @@ function loadModel(cubeData, div) {
   console.log("Logigng the cube model", cube);
   // group
   let group = new THREE.Group();
-  group.name = "cube-" + cubeData[0];
+  group.name = "cube-" + cubeData.icon;
+
+  console.log("Loggign teh cubeData naem", group.name)
 
   // slot
   let slot = chooseSlot();
@@ -790,9 +791,18 @@ function loadCube(group, cube, div) {
 }
 
 function removeModel(cubeData, div) {
-  let cube = cubeGroup.getObjectByName("cube-" + cubeData[0]);
+
+
+
+  // console.log("Logging the cubeData", cubeData)
+  // console.log("Loggin the cubeData at the")
+
+  let cube = cubeGroup.getObjectByName("cube-" + cubeData.icon);
+  // console.log("Logging the Div", div)
   cubeGroup.remove(cube);
 
+
+  // console.log("Logging the cube", cube)
   //
   div.classList.remove("loading");
 

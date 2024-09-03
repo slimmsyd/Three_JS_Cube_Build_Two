@@ -27,10 +27,6 @@ let selectedAccount;
  */
 function init() {
 
-  console.log("Initializing example");
-  console.log("WalletConnectProvider is", WalletConnectProvider);
-  console.log("Fortmatic is", Fortmatic);
-  console.log("window.web3 is", window.web3, "window.ethereum is", window.ethereum);
 
   // Check that the web page is run in a secure context,
   // as otherwise MetaMask won't be available
@@ -69,7 +65,6 @@ function init() {
     disableInjectedProvider: false, // optional. For MetaMask / Brave / Opera.
   });
 
-  console.log("Web3Modal instance is", web3Modal);
 }
 
 
@@ -80,7 +75,7 @@ async function fetchAccountData() {
   // Get a Web3 instance for the wallet
   const web3 = new Web3(provider);
 
-  console.log("Web3 instance is", web3);
+  // console.log("Web3 instance is", web3);
 
   // Get connected chain id from Ethereum node
   const chainId = await web3.eth.getChainId();
@@ -102,7 +97,6 @@ async function fetchAccountData() {
   const accounts = await web3.eth.getAccounts();
 
   // MetaMask does not give you all accounts, only the selected account
-  console.log("Got accounts", accounts);
   selectedAccount = accounts[0];
 
   function getFirstFourCharacters(address) {
@@ -130,7 +124,7 @@ async function fetchAccountData() {
         );
       }
       const data = await response.json();
-      console.log("NFT Data:", data);
+      // console.log("NFT Data:", data);
       // Initialize CubeViewer or any other logic
       if (data) {
         updateCubeBank(data);
@@ -188,7 +182,7 @@ async function refreshAccountData() {
  */
 async function onConnect() {
 
-  console.log("Opening a dialog", web3Modal);
+  // console.log("Opening a dialog", web3Modal);
   try {
     provider = await web3Modal.connect();
     document.getElementById("model-viewer_container").style.display = "block";

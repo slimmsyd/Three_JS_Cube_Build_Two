@@ -437,7 +437,7 @@ a {
 }
 
 .nav-bar {
-  z-index: 9999 !important;
+  z-index: 98;
   position: absolute;
   width: 70%;
   background: transparent;
@@ -512,6 +512,9 @@ a {
   width: 180px;
   z-index: 1;
   cursor: pointer;
+}
+.nav-sub a { 
+  z-index: 2;
 }
 .stats_bl {
   display: none !important;
