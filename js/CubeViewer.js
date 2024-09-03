@@ -705,12 +705,10 @@ function loadModel(cubeData, div) {
   //nodes
   let cube = cubeData;
 
-  console.log("Logigng the cube model", cube);
   // group
   let group = new THREE.Group();
   group.name = "cube-" + cubeData.icon;
 
-  console.log("Loggign teh cubeData naem", group.name)
 
   // slot
   let slot = chooseSlot();
