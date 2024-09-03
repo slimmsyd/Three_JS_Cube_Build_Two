@@ -425,9 +425,8 @@ rect {
   content: url("/assets/img/socials-button/SocialsButton_Clicked4x.png");
 }
 
-
-a{
-    position: relative;
+a {
+  position: relative;
 }
 /* Click (active) state */
 #wallet-button-connect:active {
@@ -448,59 +447,59 @@ a{
   right: 10px;
   font-family: "wwDigital";
   flex-direction: column;
-align-items: end;
-gap:40px;
+  align-items: end;
+  gap: 15px;
   font-size: 10px;
 }
 .nav-sub {
-    position: relative;
+  position: relative;
   display: flex;
   align-items: center;
   justify-content: center;
   width: 200px;
+  height: 50px;
   color: white;
   font-size: 10px;
 }
 .nav-sub.custom a {
-    margin-top:0px;
-    margin-bottom: 27px;
-    display: inline-block;
-
-
+  margin-top: 0px;
+  margin-bottom: 27px;
+  display: inline-block;
 }
 
-.nav-bar a { 
-    display: inline-block;
-    text-decoration: none; /* Remove underline from link */
-    color: inherit; /* Inherit text color */
+.nav-bar a {
+  display: inline-block;
+  text-decoration: none; /* Remove underline from link */
+  color: inherit; /* Inherit text color */
 }
 
-.nav-sub.custom span {
-    margin-top:5px;
-    margin-left: 24px;
+.nav-sub.custom  {
+  margin-top: 5px;
+  margin-left: 24px;
+  z-index: 2;
+}
+.nav-sub.wallet img {
+  width: 155px !important;
+}
+.nav-sub.wallet span { 
+  z-index: 2;
+  pointer-events: none;
 
 }
-.nav-sub.wallet img{
-
-    width: 155px !important;
-}
-.nav-sub.wallet a{
-    margin-top: 0px;
-
-
-
+.nav-sub.wallet a {
+  margin-top: 0px;
 }
 
 .nav-sub.wallet a {
-    display: inline-block;
-    text-decoration: none; /* Remove underline from link */
-    color: inherit; /* Inherit text color */
-  }
-  
-  .nav-sub.wallet img {
-    display: block; /* Ensures the image fills the anchor tag */
-  }
+  display: inline-block;
+  text-decoration: none; /* Remove underline from link */
+  color: inherit; /* Inherit text color */
+}
 
+.nav-sub.wallet img {
+  cursor: pointer;  
+  display: block; /* Ensures the image fills the anchor tag */
+}
 
 .nav-bar a {
   margin-top: 15px;
@@ -511,28 +510,28 @@ gap:40px;
 .nav-bar img {
   position: absolute;
   width: 180px;
-  z-index: -1;
+  z-index: 1;
   cursor: pointer;
 }
 .stats_bl {
   display: none !important;
 }
-#WEB3_CONNECT_MODAL_ID{
+#WEB3_CONNECT_MODAL_ID {
   z-index: 9999;
   position: relative;
 }
 
-
-
-#wallet-button{
+#wallet-button {
   display: none;
   z-index: 99;
 }
-#selected-account{
+#selected-account {
   text-transform: lowercase;
 }
+#btn-connect-container {
+}
 
-.no-cubes-message{
+.no-cubes-message {
   font-family: "wwDigital";
   padding-left: 20px;
   line-height: 150%;
