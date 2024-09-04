@@ -414,16 +414,20 @@ rect {
 
 /* Click (active) state */
 #gallery-button:active {
-  content: url("/assets/img/gallery-button/GalleryButton_Clicked4x.png");
+  content: url("/assets/img/wallet-button/WalletButton_Clicked4x.png");
 }
+#btn-connect:hover {
+  content: url("/assets/img/wallet-button/WalletButton_Hover4x.png");
+}
+#btn-connect:active {
+  content: url("/assets/img/wallet-button/WalletButton_Clicked4x.png");
+}
+
 #social-button:hover {
   content: url("/assets/img/socials-button/SocialsButton_Hover4x.png");
 }
 
-/* Click (active) state */
-#social-button:active {
-  content: url("/assets/img/socials-button/SocialsButton_Clicked4x.png");
-}
+
 
 a {
   position: relative;
